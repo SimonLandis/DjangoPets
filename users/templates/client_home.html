@@ -1,0 +1,15 @@
+{% extends 'client_base.html' %}
+{% block content %}
+    <div class="client-view">
+        <div class="client-info">
+        <img class="img-thumbnail" src="{{ user.profile.image.url }}" alt="">
+        <p>Hi, {{ user.username|capfirst }}, this is your homepage. </p>
+        <p>In this section you will see links, as well as a list of your pets.</p>
+        </div>
+        <div>
+        {% for pet in pets %}
+            {{ pet.name }}
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

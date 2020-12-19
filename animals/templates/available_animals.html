@@ -1,0 +1,16 @@
+{% extends 'client_base.html' %}
+{% block content %}
+<div class="card-columns">
+    {% for stray in strays %}
+      <div class="card">
+        <img class="card-img-top" src="{{ stray.image.url }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ stray.name }}</h5>
+          <p class="card-text">{{ stray.notes }}</p>
+          <p class="card-text"><small class="text-muted">{{ stray.arrival_date }}</small></p>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

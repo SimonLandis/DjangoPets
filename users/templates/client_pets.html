@@ -1,0 +1,11 @@
+{% extends 'client_base.html' %}
+{% block content %}
+    {% for pet in pets %}
+        {% if pet.owner == user.self %}
+            {{ pet.name }}
+        {% else %}
+            <p>Looks like you don't have any pets, would you like to add one?{% url 'animal-create' %}</p>
+            <p>Or would you like to take a look at our animals up for adoption?</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

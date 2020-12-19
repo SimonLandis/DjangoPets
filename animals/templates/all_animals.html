@@ -1,0 +1,6 @@
+<p>All pets</p>
+{% for animal in animals %}
+    <a href="{% url "animal-detail" animal.id %}"><p>{{ animal.name }}</p></a>
+{% endfor %}
+
+
